@@ -1,0 +1,30 @@
+module Animals {
+	description "Meow";
+
+	revision 0;
+	leaf cats {
+		type string;
+	}
+	leaf dogs {
+		type string;
+	}
+
+	rpc test {
+		input {
+			leaf cats {
+				type string;
+			}
+			leaf dogs {
+				type string;
+			}
+		}
+		output {
+			leaf cats {
+				type string;
+			}
+			leaf dogs {
+				type string;
+			}
+		}
+	}
+}
