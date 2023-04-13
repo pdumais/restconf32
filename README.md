@@ -1,5 +1,6 @@
 Git clone this repo
-Git clone https://github.com/freeconf/restconf.git in a folder under this same project
+Fork this project: https://github.com/freeconf/restconf.git
+Git clone your fork in a folder under this same project
 edit go.mod from this repo set the restconf folder correctly on the line that starts with "replace"
     for example: if you've cloned restconf under the folder "restconf" then go.mod is already ok.
 
@@ -15,3 +16,11 @@ I think that the function readInput in browser_handler.go (in the restconf lib) 
 if the content Type is yang-data+xml, then you must parse xml instead of json.
 But then there is a call to nodeutil.ReadJSONValues(payload). You'll probably need to implement another one of those method to handle xml.
 I think that's the function that converts xml to Yang.
+
+Background:
+Restconf is a web server library that serves models written in Yang.
+According to RFC 8040, it should support xml and json.
+Parsing xml in the library is not as straightforward as you might think. Restconf enforces you to adhere to the yang model. 
+It currently does this with json so it must work the same way woth xml.
+
+The task is only to parse xml. Not to output xml. So it's ok to still receive a json response.
