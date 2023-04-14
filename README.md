@@ -1,6 +1,5 @@
 Git clone this repo
-Fork this project: https://github.com/freeconf/restconf.git
-Git clone your fork in a folder under this same project
+Git clone the Nokia fork for the restconf project (https://github.com/nokia/restconf)
 edit go.mod from this repo set the restconf folder correctly on the line that starts with "replace"
     for example: if you've cloned restconf under the folder "restconf" then go.mod is already ok.
 
