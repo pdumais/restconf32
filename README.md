@@ -1,9 +1,12 @@
 Git clone this repo
+
 Git clone the Nokia fork for the restconf project (https://github.com/nokia/restconf)
+
 edit go.mod from this repo set the restconf folder correctly on the line that starts with "replace"
-    for example: if you've cloned restconf under the folder "restconf" then go.mod is already ok.
+- for example: if you've cloned restconf under the folder "restconf" then go.mod is already ok.
 
 Run the example: `./go.sh run .`
+
 Then from another shell, do `curl -H'Content-Type:application/yang-data+json' -H'Accept:application/yang-data+json' http://localhost:8080/restconf/operations/animals:test -d '{"Animals:input":{"cats":"meow","dogs":"woof"}}' -vvv`
 You'll see an output like: `{"Animals:output":{"cats":"meow","dogs":"woof"}}`. It means it's working.
 
